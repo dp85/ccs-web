@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="ccsApp">
+<head>
+    <title>Customers/Orders App</title>
+    <!--  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" /> -->
+    <link href="styles/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="styles/animations.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-default" ng-controller="HeaderController">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Contract Control Solutions" src="images/logo_small.png"
+                         style="max-height: 40px; margin-top: -7px;">
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ng-class="{ active: isActive('/')}" ><a href="#/projectentry">Project Entry</a></li>
+                <li ng-class="{ active: isActive('/contact')}" ><a href="#/contact">Contact Information</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            <li>  <button type="button" class="btn btn-default navbar-btn">Logout</button> </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div ng-view class="slide-animation"></div>
+</main>
+
+<script src="scripts/angular.js"></script>
+<script src="scripts/angular-route.js"></script>
+<script src="scripts/angular-animate.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers/projectController.js"></script>
+<script src="app/controllers/headerController.js"></script>
+<script src="app/services/projectFactory.js"></script>
+<script src="app/services/values.js"></script>
+</body>
+</html>
